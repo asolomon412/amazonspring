@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Ref: http://www.mkyong.com/hibernate/hibernate-one-to-one-relationship-example/ -->
+<hibernate-mapping package="com.gc.model.dto">
+	<class name="UserRole" table="user_roles">	
+		<id name="userid" column="userid">			
+			<!-- <generator class="foreign">			
+				<param name="property">user</param>
+			</generator> -->
+		</id>
+		
+		<property name="username"></property>
+		<property name="role"></property>
+		<property name="rating"></property>
+		
+ 		<one-to-one name="user" class="User" constrained="true"/>		 		
+	</class>
+
+</hibernate-mapping>
