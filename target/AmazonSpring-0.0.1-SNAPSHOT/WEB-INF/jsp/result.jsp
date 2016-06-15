@@ -8,5 +8,8 @@
 </head>
 <body>
 <h1>${message}</h1>
+<a href="index.jsp">Home</a><br>
+<a href="${pageContext.request.contextPath}/login">Login</a><br>
+
 </body>
 </html>

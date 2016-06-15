@@ -15,7 +15,7 @@
 <!--        <url-pattern>*.html</url-pattern>          -->
    </servlet-mapping>
    
-    <listener>
+ <listener>
   <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
  </listener>
  
@@ -23,6 +23,7 @@
   <param-name>contextConfigLocation</param-name>
   <param-value>
    /WEB-INF/AmazonGC-servlet.xml,
+   /WEB-INF/applicationContext.xml,
    /WEB-INF/security-config.xml
    </param-value>
  </context-param>

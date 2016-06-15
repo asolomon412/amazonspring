@@ -4,13 +4,25 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans  
         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<bean id="dataSource"
+<!-- Mysql datasource -->
+<!-- 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
 		<property name="url" value="jdbc:mysql://localhost:3306/amazonspring"></property>
-		<property name="username" value="root"></property>
-		<property name="password" value="admin"></property>
-	</bean>
+		<property name="username" value="xxxx"></property>
+		<property name="password" value="xxxx"></property>
+	</bean> -->
+	
+	<!-- Postgres datasource -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="org.postgresql.Driver"></property>
+		<!-- Use this to connect to remote DB but run App locally -->
+		<!-- <property name="url" value="jdbc:postgresql://ec2-54-235-68-4.compute-1.amazonaws.com:5432/d3sjumuab5ri8e?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory"></property> -->
+		<!-- <property name="url" value="jdbc:postgresql://localhost:5432/amazonspring"></property> -->
+		<!-- <property name="username" value="xxxxx"></property> -->
+		<!-- <property name="password" value="xxxx"></property> -->
+	</bean>	
 
 	<bean id="mysessionFactory"
 		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
@@ -26,7 +38,9 @@
 
 		<property name="hibernateProperties">
 			<props>
-				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+<!-- 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop> -->
+				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
+				
 				<!-- Allow automatic table creation -->
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
 				<prop key="hibernate.show_sql">true</prop>
@@ -41,10 +55,12 @@
 
 	<bean id="d" class="com.gc.model.dao.ProductsDAO">
 		<property name="template" ref="template"></property>
+		<property name="dataSource" ref="dataSource"></property>
 	</bean>
 
 	<bean id="u" class="com.gc.model.dao.UserDAO">
 		<property name="template" ref="template"></property>
+		<property name="dataSource" ref="dataSource"></property>
 	</bean>
 
 	<bean id="ur" class="com.gc.model.dto.UserRole">

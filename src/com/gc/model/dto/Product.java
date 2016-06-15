@@ -36,6 +36,24 @@ public class Product {
 		this.userid = userid;
 	}
 
+	
+	/**
+	 * Parameterized constructor
+	 * @param productid
+	 * @param name
+	 * @param description
+	 * @param price
+	 * @param userid
+	 */
+	public Product(String name, String description, String price, long userid, long productid) {
+		super();
+		this.productid = productid;
+		this.name = name;
+		this.description = description;
+		this.price = price;
+		this.userid = userid;
+	}
+
 	/**
 	 * @return the productid
 	 */

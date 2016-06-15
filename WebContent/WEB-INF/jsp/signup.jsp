@@ -9,7 +9,7 @@
 <title>Sign Up for an account</title>
 </head>
 <body>
-	<h2>Add Product</h2>
+	<h2>New Usr Signup</h2>
 	<form:form method="POST" commandName="command"
 		action="${pageContext.request.contextPath}/submitadduser">
 		<table>

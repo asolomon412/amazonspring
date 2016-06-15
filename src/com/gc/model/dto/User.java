@@ -17,6 +17,28 @@ public class User {
 	private UserRole userrole;	
 	
 	/**
+	 * Default constructor
+	 */
+	public User(){
+		
+	}
+		
+	/**
+	 * @param username
+	 * @param password
+	 * @param userid
+	 * @param userrole
+	 */
+	public User(String username, String password, long userid, UserRole userrole) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.userid = userid;
+		this.userrole = userrole;
+	}
+
+
+	/**
 	 * @return the userrole
 	 */
 	public UserRole getUserrole() {
@@ -28,13 +50,6 @@ public class User {
 	 */
 	public void setUserrole(UserRole userrole) {
 		this.userrole = userrole;
-	}
-	
-	/**
-	 * 
-	 */
-	public User() {
-		// TODO Auto-generated constructor stub
 	}
 	
 	/**

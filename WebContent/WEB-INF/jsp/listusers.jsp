@@ -14,7 +14,7 @@
 				<th>User Name</th>
 				<th>User ID</th>
 				<th>Role</th>
-				<th>Rating</th>	
+				<th>Avg. Rating</th>	
 				<th>Rate</th>				
 			</tr>
 		</thead>

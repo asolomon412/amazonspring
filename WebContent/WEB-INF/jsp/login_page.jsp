@@ -40,6 +40,10 @@
    </form>
    <br>
    <a href="index.jsp">Home</a><br>
+   	<form:form action="${pageContext.request.contextPath}/logout"
+		method="POST">
+		<input type="submit" value="Logout" />
+	</form:form>
    <h1><a href="adduser">Sign Up</a></h1>
   </div>
  </center>

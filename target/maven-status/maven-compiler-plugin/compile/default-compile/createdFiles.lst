@@ -1,0 +1,6 @@
+com\gc\model\dao\UserDAO.class
+com\gc\model\dto\Product.class
+com\gc\model\dto\UserRole.class
+com\gc\model\dto\User.class
+com\gc\model\dao\ProductsDAO.class
+com\gc\controller\AppController.class

@@ -10,6 +10,7 @@
 </head>
 <body>
 	<h1>${message}</h1>
+	<h1>Here is your receipt</h1>
 	<!-- Do not display table if shopping cart is empty -->
 	<c:choose>
 		<c:when test="${sessionScope.shoppingcart != null}">
@@ -59,6 +60,10 @@
 			<a href="showproducts">Continue Shopping</a>
 		</c:otherwise>
 	</c:choose>
-
+	<br>
+	<form:form
+		action="${pageContext.request.contextPath}/logout" method="POST">
+		<input type="submit" value="Logout" />
+	</form:form>
 </body>
 </html>

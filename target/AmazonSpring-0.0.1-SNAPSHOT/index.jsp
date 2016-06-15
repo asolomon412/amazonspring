@@ -9,7 +9,8 @@
 <body>
 
 <a href="showproducts">Shop</a><br>
-<a href="addproduct">Sell</a>
+<a href="addproduct">Sell</a><br>
+<a href="listusers">List Sellers</a>
 
 </body>
 </html>

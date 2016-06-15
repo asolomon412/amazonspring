@@ -11,22 +11,25 @@
 <body>
 	<h2>Rate this seller</h2>
 	<form:form method="POST" action="${pageContext.request.contextPath}/submitsellerrating">
-		<form:label path="username">Username</form:label>
-		<form:input path="username" /><br>	
-			
-		<form:label path="userid">Userid</form:label>
-		<form:input path="userid" /><br>
-		
-		<form:label path="rating">Rating</form:label>
-		<form:select path="rating">
-			<form:option value="0">0</form:option>
-			<form:option value="1">1</form:option>
-			<form:option value="2">2</form:option>
-			<form:option value="3">3</form:option>
-			<form:option value="4">4</form:option>
-		</form:select>
+		<table>
+			<th>Username</th>
+			<th>Userid</th>
+			<th>Rate</th>
+			<tr>
+				<td><form:input path="username" readonly="true" /></td>
+				<td><form:input path="userid" readonly="true" /></td>
+				<td><form:select path="rating">
+						<form:option value="0">0</form:option>
+						<form:option value="1">1</form:option>
+						<form:option value="2">2</form:option>
+						<form:option value="3">3</form:option>
+						<form:option value="4">4</form:option>
+					</form:select>
+				</td>
+			</tr>
+		</table>
 		<br>
-		<input type="submit" value="Rate" />
+		<input type="submit" value="Rate" />		
 	</form:form><br>
 	<a href="index.jsp">Home</a>
 </body>

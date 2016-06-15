@@ -3,12 +3,15 @@
  */
 package com.gc.model.dao;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Property;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 
 import com.gc.model.dto.Product;
@@ -18,14 +21,45 @@ import com.gc.model.dto.UserRole;
 /**
  * @author Maurice Tedder
  * Data Access Object for user table.
- *
+ * or we can use hibernate style SessionFactory.getCurrentSession() instead of the
+ * HibernateTemplate class.
  */
 public class UserDAO {
 	HibernateTemplate template;
+	DriverManagerDataSource dataSource;
 
 	public void setTemplate(HibernateTemplate template) {		
 		this.template = template;
 	}
+	
+	/**
+	 * Initialize with the datasource so that we can use system environment
+	 * variable to set the username and password and not have them hard
+	 * coded. There may be a better way to do this in spring but this is my
+	 * solution when using HibernateTemplate. I'll create another example using
+	 * Hibernate Session as a branch of this example.
+	 * @param dataSource the dataSource to set
+	 */
+	public void setDataSource(DriverManagerDataSource dataSource) {		
+		try {
+			URI uri = new URI(System.getenv("DATABASE_URL"));
+			String[] userInfo = uri.getUserInfo().split(":");//get username and password from uri string
+			String username = userInfo[0];
+			String password = userInfo[1];					
+			String dbURL = "jdbc:postgresql://" + uri.getHost() + ":" + uri.getPort() + uri.getPath();// + "?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory";
+			//set datasource properties
+			dataSource.setUsername(username);	
+			dataSource.setPassword(password);
+			//dataSource.setUrl(dbURL);
+			//System.out.println("URI3:" + dbURL);
+			
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+		//dataSource.setPassword(password);
+		this.dataSource = dataSource;		
+	}	
 	
 	/*
 	 * Return a list of all users from the database
