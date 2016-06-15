@@ -9,11 +9,11 @@
 <title>Check Out</title>
 </head>
 <body>
-	<h1>${message}</h1>
-	<h1>Here is your receipt</h1>
+	<h1>${message}</h1>	
 	<!-- Do not display table if shopping cart is empty -->
 	<c:choose>
 		<c:when test="${sessionScope.shoppingcart != null}">
+		<h1>Here is your receipt</h1>
 			<table border="1">
 				<thead>
 					<tr>
