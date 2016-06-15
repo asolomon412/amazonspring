@@ -5,19 +5,14 @@ package com.gc.model.dao;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.ServletContext;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.jdbc.datasource.UserCredentialsDataSourceAdapter;
 import org.springframework.orm.hibernate3.HibernateTemplate;
-import org.springframework.web.context.support.XmlWebApplicationContext;
 
 import com.gc.model.dto.Product;
+
 
 /**
  * @author Maurice Tedder Data Access Object for products table.
@@ -54,7 +49,7 @@ public class ProductsDAO {
 			//set datasource properties
 			dataSource.setUsername(username);	
 			dataSource.setPassword(password);
-			//dataSource.setUrl(dbURL);
+			dataSource.setUrl(dbURL);
 			//System.out.println("URI1:" + dbURL);
 			
 		} catch (URISyntaxException e) {

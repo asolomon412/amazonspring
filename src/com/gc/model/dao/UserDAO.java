@@ -50,7 +50,7 @@ public class UserDAO {
 			//set datasource properties
 			dataSource.setUsername(username);	
 			dataSource.setPassword(password);
-			//dataSource.setUrl(dbURL);
+			dataSource.setUrl(dbURL);
 			//System.out.println("URI3:" + dbURL);
 			
 		} catch (URISyntaxException e) {
