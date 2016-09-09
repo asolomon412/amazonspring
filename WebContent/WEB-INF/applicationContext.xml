@@ -17,9 +17,9 @@
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="org.postgresql.Driver"></property>
-		<!-- Use this to connect to remote DB but run App locally -->
-		<!-- <property name="url" value="jdbc:postgresql://ec2-54-235-68-4.compute-1.amazonaws.com:5432/d3sjumuab5ri8e?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory"></property> -->
-		<!-- <property name="url" value="jdbc:postgresql://ec2-54-235-68-4.compute-1.amazonaws.com:5432/d3sjumuab5ri8e"></property> -->		
+		<!-- Use this to connect to remote DB but run App locally for testing and debugging -->
+		<!-- <property name="url" value="jdbc:postgresql://host:5432/dbname?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory"></property> -->
+		<!-- <property name="url" value="jdbc:postgresql://host:5432/dbname"></property> -->		
 		<!-- <property name="url" value="jdbc:postgresql://localhost:5432/amazonspring"></property> -->
 		<!-- <property name="username" value="xxxxx"></property> -->
 		<!-- <property name="password" value="xxxx"></property> -->

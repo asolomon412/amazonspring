@@ -3,3 +3,11 @@ Example using Spring with Hibernate, Spring security, Maven, Spring MVC and MYSQ
 I'll create another branch later that uses the preferred hibernate session method.
 
 The app is deployed on Heroku at: http://amazonspring.herokuapp.com/
+
+Buyer login
+User name: buyer
+password: buyer@123
+
+Seller login
+User name: seller
+password: seller@123
